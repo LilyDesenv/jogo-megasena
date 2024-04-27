@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Container = styled.div`
   background-color: ${colors.lightGreen};
@@ -41,6 +41,12 @@ export const NumberSection = styled.section`
 
   .empty {
     display: none;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    span {
+      font-size: 24px;
+    }
   }
 `
 export const CardSection = styled.section`
