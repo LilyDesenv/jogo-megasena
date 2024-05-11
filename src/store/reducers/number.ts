@@ -33,6 +33,8 @@ const numberSlice = createSlice({
       state.n4 = getRandom()
       state.n5 = getRandom()
       state.n6 = getRandom()
+
+      //verificando se não há números repetidos
       if (state.n1 === state.n2 && state.n1 !== 0) {
         state.n2 = getRandom()
       }
@@ -66,6 +68,32 @@ const numberSlice = createSlice({
       ) {
         state.n6 = getRandom()
       }
+
+      //colocando os números em ordem crescente
+      const arrayNumeros = [
+        state.n1,
+        state.n2,
+        state.n3,
+        state.n4,
+        state.n5,
+        state.n6
+      ]
+      let aux = 0
+      for (let i = 0; i < arrayNumeros.length; i++) {
+        for (let j = 0; j < arrayNumeros.length - 1; j++) {
+          if (arrayNumeros[j] > arrayNumeros[j + 1]) {
+            aux = arrayNumeros[j]
+            arrayNumeros[j] = arrayNumeros[j + 1]
+            arrayNumeros[j + 1] = aux
+          }
+        }
+      }
+      state.n1 = arrayNumeros[0]
+      state.n2 = arrayNumeros[1]
+      state.n3 = arrayNumeros[2]
+      state.n4 = arrayNumeros[3]
+      state.n5 = arrayNumeros[4]
+      state.n6 = arrayNumeros[5]
     }
   }
 })
