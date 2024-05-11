@@ -35,36 +35,33 @@ const numberSlice = createSlice({
       state.n6 = getRandom()
 
       //verificando se não há números repetidos
-      if (state.n1 === state.n2 && state.n1 !== 0) {
+      if (state.n1 === state.n2) {
         state.n2 = getRandom()
       }
-      if ((state.n1 === state.n3 || state.n2 === state.n3) && state.n1 !== 0) {
+      if (state.n1 === state.n3 || state.n2 === state.n3) {
         state.n3 = getRandom()
       }
       if (
-        (state.n1 === state.n4 ||
-          state.n2 === state.n4 ||
-          state.n3 === state.n4) &&
-        state.n1 !== 0
+        state.n1 === state.n4 ||
+        state.n2 === state.n4 ||
+        state.n3 === state.n4
       ) {
         state.n4 = getRandom()
       }
       if (
-        (state.n1 === state.n5 ||
-          state.n2 === state.n5 ||
-          state.n3 === state.n5 ||
-          state.n4 === state.n5) &&
-        state.n1 !== 0
+        state.n1 === state.n5 ||
+        state.n2 === state.n5 ||
+        state.n3 === state.n5 ||
+        state.n4 === state.n5
       ) {
         state.n5 = getRandom()
       }
       if (
-        (state.n1 === state.n6 ||
-          state.n2 === state.n6 ||
-          state.n3 === state.n6 ||
-          state.n4 === state.n6 ||
-          state.n5 === state.n6) &&
-        state.n1 !== 0
+        state.n1 === state.n6 ||
+        state.n2 === state.n6 ||
+        state.n3 === state.n6 ||
+        state.n4 === state.n6 ||
+        state.n5 === state.n6
       ) {
         state.n6 = getRandom()
       }
